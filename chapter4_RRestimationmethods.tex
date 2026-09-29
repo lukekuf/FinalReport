@@ -1,0 +1,37 @@
+\chapter{Evaluation of Estimation Methods}
+
+When estimating Respiratory Rate from ECG signal, the common approach is to isolate RR peaks, and then work with the 
+waveform associated with amplitude and time of the RR peaks \cite{MIRMOHAMADSADEGHI201466}. There are two common method; the first focuses on locating 
+the dominate frequency in the time between RR peaks, this corresponds to the biological phenomenon of 
+Respiratory Sinus Arrhythmia (RSA), which states the heart rate speeds up when you breath in and slows down when you breath out
+\cite{clevelandclinic_sinus_arrhythmia}, \cite{MIRMOHAMADSADEGHI201466}. The other method is based on the amplitude differences of the RR peaks (RPA),
+which is associated to impacts breathing in and out has on the electrical output of the heart \cite{MIRMOHAMADSADEGHI201466}.\\
+
+\section{Spectrum Analysis Methods: FFT vs LSP}
+Implementing either of these methods requires spectrum analysis, however as we are dealing with non-uniform time data we can't blindy
+apply the Fast Fourier Transform (FFT). There are two ways of dealing with non-uniform time series data which we explore in 
+this project. The first is to use an interpolation method between the RR peaks and then sample a uniform time 
+from this and apply FFT to this waveform, the other is to use the Lomb-Scargle Method defined for non-uniform time 
+series data. We give a brief explanation of each method, and compare the output spectrum of these in this section, then the section below we will continue the analyse to 
+the spectograms. 
+
+\subsection{Interpolation and FFT method}
+Here give a explanation of how this method works, and illustrate the graphical support for using the interpolation. 
+
+\subsection{LombScargle Method}
+
+Here give explanation of how the LombScargle method works. 
+
+\subsection{Method Comparison}
+Compare spectral outputs, over different datasets of each. 
+
+
+
+
+\section{RSA vs RPA Performance}
+Here we evaluate the spectograms for the methods. As we expect Respiratory Rate to remain relatively 
+stable \cite{braun1990respiratory}, we use spectograms to see if we can pick up on a consistent dominate frequency within the expected 
+Respirate Rate of 12 - 20 BPM \cite{chourpiliadis2022respiratory}, which corresponds to a range of  0.2- 0.33Hz , for a candidate
+Respiratory Rate. Note that we can't ignore frequencies outside of the range especially as we know we are dealing with data where Apnea and possible
+other repsirate events are occuring that cause Respiratory to land outside of the normal range - hence we a predominantly looking for a consistent
+dominate frequency to appear over time in spectrograms. 
