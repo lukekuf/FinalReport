@@ -1,0 +1,36 @@
+\chapter{Conclusion}\label{ch:conclusion}
+
+\section{Result Discussion and Conclusion}
+\subsection{Peak Detection Algorithm}
+We developed a basic algorithm model for identifying QRS complexes based upon a Processing Phase, and then 
+Identification Phase using a adaptive threshold, we tested the performance of this algorithm against the QRS annotation 
+files, noting that different time interval thresholds worked for different datasets. We then produced extensions of this algorithm to improve 
+the performance, concluding with a Jump Detection Based Algorithm that produces the best performance, at the sacrifice 
+of time complexity. 
+\subsection{Respiratory Rate Methods}
+We evaluated the RSA and RPA Respiratory Rate estimation methods, using spectrograms as the predomiant tool with the goal 
+of identifying a dominate frequency, that persitted across time. We began by evaluating two methods 
+for spectrum analysis of the non-uniform time series, a Discrete Fourier Transform with interpolation and LombScargle. 
+We saw that the interpolation was very accurate, and due to the error involved in the LombScargle method along 
+with time complexity, that the FFT based method was better for producing Spectrograms. We saw that the RPA method 
+produced a stronger dominate frequency when it was able to detect one, however the RSA method was more robust across 
+the datasets, however neither performed very well at all, with 7 of the 8 tested datasets not having a visually obvious pattern 
+in the Spectrogram. 
+\section{Area for future research}
+We suggeset the following directions for extending the work of this Project. \\
+Peak Detection Algorithm:
+\begin{itemize}
+        \item Implement statistical methods to determine false detection or missed detection of 
+        RR peaks, by identifying small or large gaps in RR peak intervals based off the average interval size. 
+        When detected remove, or adjust threshold. 
+\end{itemize}
+Respiratory Rate Methods:
+\begin{itemize}
+        \item Adjust Spectrogram increments and window sizes to see if this improves ability 
+        to detect signals.
+        \item Estimate Error of the interpolation method to provide further validity of this FFT based 
+        method.
+        \item Testing Methods with other known QRS complex algorithms, e.g Pan Tompkins.
+        \item Implement unsupervised learning techniques to identify patterns in the Spectrogram that may 
+        correspond to Respiratory Rate that aren't visually apparent. 
+\end{itemize}

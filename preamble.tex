@@ -53,6 +53,9 @@
 \usepackage{csvsimple}
 \usepackage{booktabs}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
 
 % --------------------------------------------------
 % Code
@@ -73,8 +76,16 @@
 % --------------------------------------------------
 
 \titleformat{\chapter}
-  {\normalfont\Large\bfseries}
+  {\normalfont\LARGE\bfseries}
   {\thechapter}{1em}{}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesection}{1em}{}
 
 \titlespacing*{\chapter}
   {0pt}
